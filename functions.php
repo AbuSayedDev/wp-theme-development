@@ -13,7 +13,8 @@ function wtd_setup_theme(){
    // nav menus
    register_nav_menus(array(
       'main-menu' => __('Main Menu', 'textdomain'),
-      'footer-menu' => __('Footer Menu', 'textdomain')
+      'footer-menu' => __('Footer Menu', 'textdomain'),
+      'sidebar-menu' => __('Sidebar Menu', 'textdomain')
    ));
 
 }
