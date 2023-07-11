@@ -7,8 +7,11 @@
 
 function wtd_setup_theme(){
 
-   // textdomain
+   // Langauge textdomain
    load_theme_textdomain('textdomain');
+
+   // Title Daynamic
+   add_theme_support('title-tag');
 
    // nav menus
    register_nav_menus(array(
