@@ -13,6 +13,8 @@ get_header(); ?>
     <!-- Page Banner End Here -->
     
     <!-- About Start Here -->
+
+    
     <div class="about fix">
         <div class="about-left">
             <h4>about us</h4>

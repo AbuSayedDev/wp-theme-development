@@ -63,10 +63,6 @@ h6 {
   width: 250px;
   margin-right: 30px;
 }
-.logo a {
-}
-.logo a img {
-}
 .menu {
   float: right;
   width: 680px;
@@ -91,24 +87,12 @@ h6 {
   color: #fff;
 }
 
-/* Banner CSS */
-.banner {
-}
-.banner img {
-}
-
 /* Services CSS */
-.services {
-}
-.title {
-}
 .title h4 {
   text-align: center;
   text-transform: capitalize;
   font-size: 40px;
   margin: 40px 0;
-}
-.service {
 }
 .single-service {
   background-color: teal;
@@ -132,24 +116,19 @@ h6 {
   text-transform: capitalize;
   margin-bottom: 25px;
 }
-.single-service img {
-}
-.single-service p {
-}
-.single-service a {
-}
 
 /* About CSS */
-.about {
+.about, .page-area {
   padding: 60px 0;
 }
-.about-left {
+.about-left, .page-left-area {
   float: left;
   width: 700px;
   margin-right: 30px;
 }
 .about-left h4,
-.about-menu h4 {
+.about-menu h4,
+.page-left-area h4{
   text-transform: capitalize;
   font-size: 35px;
   margin-bottom: 18px;
@@ -157,13 +136,9 @@ h6 {
 .about-left p {
   margin-bottom: 10px;
 }
-.about-left a {
-}
 .about-menu {
   float: right;
   width: 270px;
-}
-.about-menu ul {
 }
 .about-menu ul li {
   background-image: url("../img/arrow.png");
@@ -228,10 +203,6 @@ h6 {
 }
 
 /* Gallery CSS */
-.gallerys {
-}
-.gallery {
-}
 .single-gallery {
   float: left;
   width: 227px;
@@ -262,8 +233,6 @@ h6 {
   text-transform: capitalize;
   font-size: 36px;
   margin-bottom: 50px;
-}
-.contact-form form {
 }
 .contact-form input {
   width: 100%;
@@ -297,15 +266,11 @@ h6 {
   float: right;
   width: 300px;
 }
-.contact-address ul {
-}
 .contact-address ul li {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
   margin-bottom: 10px;
   font-size: 22px;
-}
-.contact-address ul li i {
 }
 .contact-address ul li span {
   font-weight: bold;
