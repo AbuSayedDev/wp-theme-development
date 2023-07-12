@@ -104,11 +104,13 @@
   .menu,
   .about-left,
   .about-menu,
-  .page-left-area {
+  .page-left-area,
+  .single-post-left {
     width: 100%;
   }
   .about-left,
-  .page-left-area {
+  .page-left-area,
+  .single-post-left {
     margin-bottom: 30px;
   }
   .menu ul {
@@ -142,7 +144,7 @@
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .area {
+  .area, .single-post-left {
     width: 450px;
   }
 }
