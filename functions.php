@@ -13,6 +13,9 @@ function wtd_setup_theme(){
    // Title Daynamic
    add_theme_support('title-tag');
 
+   // featured images
+   add_theme_support('post-thumbnails');
+
    // nav menus
    register_nav_menus(array(
       'main-menu' => __('Main Menu', 'textdomain'),
