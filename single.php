@@ -2,20 +2,19 @@
 
 <div class="single-post-area fix">
     <div class="single-post-left">
-        <img src="<?php echo the_post_thumbnail_url( ); ?>" alt="">
-        <div class="single-post-left-content">
-            <h4><?php the_title(); ?></h4>
-            <p><?php the_content(); ?></p>
-        </div>
-
-
-
+        
         <?php 
         if(have_posts()){
             while(have_posts()){
                 the_post();
         ?>
-        
+            <!-- single post -->
+            <img src="<?php echo the_post_thumbnail_url( ); ?>" alt="">
+            <div class="single-post-left-content">
+                <h4><?php the_title(); ?></h4>
+                <p><?php the_author_posts_link();?> | <?php the_date('F d');?> | <?php the_category(' ', 1);?></p>
+                <p><?php the_content(); ?></p>
+            </div>
         
             <!-- author-area start -->
             <div class="author-area">

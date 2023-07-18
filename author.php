@@ -20,7 +20,7 @@
                     <h4><?php the_title();?></h4>
                     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']); ?></a>
                     
-                    <p><?php the_author_posts_link();?></p>
+                    <p><?php the_author_posts_link();?> | <?php the_date('F d');?> | <?php the_category(' ', 1);?></p>
 
                     <p><?php the_excerpt(); ?></p>
                     <a href="<?php the_permalink(); ?>" class="btn">read more</a>
@@ -28,7 +28,7 @@
 
 
 
-                
+
             <?php
                     }
                     wp_reset_postdata();

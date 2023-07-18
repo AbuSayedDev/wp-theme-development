@@ -97,17 +97,17 @@ h6 {
 .single-service {
   background-color: teal;
   float: left;
-  width: 313px;
+  width: 303px;
   margin-right: 30px;
   padding: 20px;
   color: #fff;
 }
-.single-service:last-child,
+/* .single-service:last-child,
 .service-page .single-service:nth-child(4) {
   margin-right: 0;
-}
+} */
 .service-page .single-service {
-  width: 227px;
+  width: 303px;
   margin-bottom: 30px;
 }
 .single-service h4 {
@@ -288,9 +288,18 @@ h6 {
 }
 
 /* blog page */
+/* .blogs{
+  margin: 15px;
+} */
 .blogs img{
   width: 100%;
   height: auto;
+}
+
+.service-page .blog-title-area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 /* single page */

@@ -7,7 +7,19 @@
     <!-- Page Banner End Here -->
 
 
-    <div class="service service-page fix" style="margin-top:40px">
+  
+
+    <div style="margin-top:40px" <?php post_class(array('service', 'service-page', 'fix')); ?> >
+
+        <div class="blog-title-area">
+            <div class="title-area-left">
+                <h4>Latest Blogs</h4>
+            </div>
+            <div class="title-area-right">
+                <p><?php get_search_form(); ?></p>
+            </div>
+        </div>
+
         <?php 
             if(have_posts()){
                 while(have_posts()){
