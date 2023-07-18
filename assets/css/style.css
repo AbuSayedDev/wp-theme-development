@@ -305,3 +305,26 @@ h6 {
 .single-post-left{
   padding-bottom: 40px;
 }
+
+/* author-area */
+.author-area{
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-post-area .author-area{
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  margin-top: 50px;
+  background-color: #ddd;
+}
+
+.single-post-area .author-area .author-img-left img{
+  width: 100px;
+  height: 100px;
+}
+
+.single-post-area .author-area .author-content-right{
+  margin-left: 50px;
+}

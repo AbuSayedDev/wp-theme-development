@@ -25,6 +25,10 @@
                     <p><?php the_excerpt(); ?></p>
                     <a href="<?php the_permalink(); ?>" class="btn">read more</a>
                 </div>
+
+
+
+                
             <?php
                     }
                     wp_reset_postdata();
