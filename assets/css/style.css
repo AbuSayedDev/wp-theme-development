@@ -337,3 +337,8 @@ h6 {
 .single-post-area .author-area .author-content-right{
   margin-left: 50px;
 }
+
+/* home page blog section */
+.about-left-blog{
+  margin-top: 50px;
+}
