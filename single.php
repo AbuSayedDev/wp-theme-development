@@ -2,35 +2,45 @@
 
 <div class="single-post-area fix">
     <div class="single-post-left">
-        
         <?php 
         if(have_posts()){
             while(have_posts()){
                 the_post();
         ?>
-            <!-- single post -->
-            <img src="<?php echo the_post_thumbnail_url( ); ?>" alt="">
-            <div class="single-post-left-content">
-                <h4><?php the_title(); ?></h4>
-                <p><?php the_author_posts_link();?> | <?php the_date('F d');?> | <?php the_category(' ', 1);?></p>
-                <p><?php the_content(); ?></p>
-            </div>
-        
-            <!-- author-area start -->
-            <div class="author-area">
-                <div class="author-img-left">
-                    <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="">
-                </div>
+        <!-- single post -->
+        <img src="<?php echo the_post_thumbnail_url( ); ?>" alt="" />
+        <div class="single-post-left-content">
+            <h4><?php the_title(); ?></h4>
+            <p>
+                <?php the_author_posts_link();?> | <?php the_date('F d');?> | <?php the_category(' ', 1);?>
+            </p>
+            <p><?php the_content(); ?></p>
+        </div>
 
-                <div class="author-content-right">
-                    <p><strong>Author Name:</strong> <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></p> 
-                    <p><strong>Author Emial:</strong> <?php the_author_meta('email'); ?></p>
-                    <p><strong>Date:</strong> <?php the_date('F d'); ?></p>
-                    <p><strong>Author Description:</strong> <?php the_author_meta('description'); ?></p>
-                </div>
+        <!-- author-area start -->
+        <div class="author-area">
+            <div class="author-img-left">
+                <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="" />
             </div>
-            <!-- author-area end -->
-            
+
+            <div class="author-content-right">
+                <p>
+                    <strong>Author Name:</strong>
+                    <?php the_author_meta('first_name'); ?>
+                    <?php the_author_meta('last_name'); ?>
+                </p>
+                <p>
+                    <strong>Author Emial:</strong>
+                    <?php the_author_meta('email'); ?>
+                </p>
+                <p>
+                    <strong>Author Description:</strong>
+                    <?php the_author_meta('description'); ?>
+                </p>
+            </div>
+        </div>
+        <!-- author-area end -->
+
         <?php
 
             }
@@ -45,6 +55,5 @@
         <?php dynamic_sidebar('sidebar-1'); ?>
     </div>
 </div>
-
 
 <?php get_footer(); ?>

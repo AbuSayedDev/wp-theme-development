@@ -29,55 +29,53 @@
 
         <div class="service service-page fix">
             <div class="about-left-blog">
+                <h4>Latest Post</h4>
 
-            <h4>Latest Post</h4>
-
-            <?php
+                <?php
 
                 $args = array(
-                    'post_type'=> 'post',
-                    'posts_per_page' => 2
-
-                );
-
-                $query = new WP_Query($args);
-
-                    if($query->have_posts()){
-                        while($query->have_posts()){
-                            $query->the_post();
-
-
-            ?>
-
-                        <div class="single-service blogs">
-                            <h4><?php the_title();?></h4>
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']); ?></a>
+                    'post_type'=> 'post', 
+                    'posts_per_page' => 2,
+                    'order' => 'DESC',
+                    // 'cat' => 4,
+                    // 'cat' => array(4,7)
+                    // 'order' => 'ASC',
+                    // 'orderby' => 'rand',
+                    // 'category_name' => array( 'web-design, fashion'),
+                    
+                 ); 
+                    
+                    $query = new WP_Query($args); 
+                    
+                    if($query->have_posts()){ 
+                        while($query->have_posts()){ 
                             
-                            <p><?php the_author_posts_link();?> | <?php the_date('F d');?> | <?php the_category(' ', 1);?></p>
+                            $query->the_post(); ?>
 
-                            <p><?php the_excerpt(); ?></p>
-                            <a href="<?php the_permalink(); ?>" class="btn">read more</a>
-                        </div>
+                <div class="single-service blogs">
+                    <h4><?php the_title();?></h4>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_post_thumbnail('', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']); ?>
+                    </a>
 
-                        <?php  }
-                
+                    <p><?php the_author_posts_link();?> | <?php the_date('F d');?> | <?php the_category();?></p>
+                    <p><?php the_excerpt(); ?></p>
+                    <a href="<?php the_permalink(); ?>" class="btn">read more</a>
+                </div>
+
+                <?php  }
 
                         wp_reset_postdata();
 
                     }else{ ?>
 
-                        <p>No Post</p>
-                    
-                    <?php  } 
+                <p>No Post</p>
+
+                <?php  } 
             ?>
-                
             </div>
         </div>
     </div>
-
-
-
-
 
     <!-- sidebar -->
     <?php get_sidebar(); ?>
