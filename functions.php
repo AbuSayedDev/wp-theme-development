@@ -69,7 +69,7 @@ add_action( 'after_setup_theme', 'wtd_setup_theme' );
  function wtd_custom_post_type(){
 
    $labels = array(
-      'name'                  => __( 'Services', 'Post type general name', 'wtdtextdomain' ),
+        'name'                  => __( 'Services', 'Post type general name', 'wtdtextdomain' ),
 		'singular_name'         => __( 'Service', 'Post type singular name', 'wtdtextdomain' ),
 		'menu_name'             => __( 'Services', 'Admin Menu text', 'wtdtextdomain' ),
 		'name_admin_bar'        => __( 'Service', 'Add New on Toolbar', 'wtdtextdomain' ),
@@ -97,7 +97,7 @@ add_action( 'after_setup_theme', 'wtd_setup_theme' );
    );
 
    $args = array(
-      'labels'             => $labels,
+        'labels'             => $labels,
 		'public'             => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
@@ -109,7 +109,7 @@ add_action( 'after_setup_theme', 'wtd_setup_theme' );
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ),
-      'show_in_rest'       => false
+        'show_in_rest'       => false
    );
 
 
