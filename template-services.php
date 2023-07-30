@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Template Service
+ * Template Name: Template Services
  * 
  */
 
@@ -18,56 +18,50 @@ get_header(); ?>
         <h4>exclusive services</h4>
     </div>
     <div class="service service-page fix">
+
+    <?php 
+
+        $args = array(
+            'post_type'     => 'services',
+            'post_per_page' => 10,
+            'order'         => 'DESC'
+        );
+
+        $query = new WP_Query($args);
+
+        if($query->have_posts()){
+            while($query->have_posts()){
+                $query->the_post();
+     ?>
+
+
+
         <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service1.jpg" alt="Service 1" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
+            <h4><?php the_title(); ?></h4>
+            <img src="<?php the_post_thumbnail_url( );?>" alt="Service 1" />
+            <p><?php the_content(); ?></p>
+            <a href="<?php the_permalink(); ?>" class="btn">read more</a>
         </div>
-        <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service2.jpg" alt="Service 2" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
-        </div>
-        <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service3.jpg" alt="Service 3" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
-        </div>
-        <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service1.jpg" alt="Service 3" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
-        </div>
-        <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service2.jpg" alt="Service 3" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
-        </div>
-        <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service3.jpg" alt="Service 3" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
-        </div>
-        <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service1.jpg" alt="Service 3" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
-        </div>
-        <div class="single-service">
-            <h4>service title</h4>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service2.jpg" alt="Service 3" />
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae harum quidem labore architecto optio doloremque similique ab, mollitia distinctio eum.</p>
-            <a href="" class="btn">read more</a>
-        </div>
+
+
+
+
+    <?php  wp_reset_postdata(); } 
+        }else{ ?>
+            <p>No Service Post</p>
+    <?php    }
+    
+    ?>
+
+
+
+        
     </div>
 </div>
 <!-- Services End Here -->
 
+
 <?php get_footer();?>
+
+
+

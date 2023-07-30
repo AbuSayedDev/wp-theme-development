@@ -3,6 +3,8 @@
 <div class="single-post-area fix">
     <div class="single-post-left">
         <?php 
+
+        
         if(have_posts()){
             while(have_posts()){
                 the_post();

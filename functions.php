@@ -103,7 +103,7 @@ add_action( 'after_setup_theme', 'wtd_setup_theme' );
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'service' ),
+		'rewrite'            => array( 'slug' => 'services' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
@@ -112,10 +112,59 @@ add_action( 'after_setup_theme', 'wtd_setup_theme' );
         'show_in_rest'       => false
    );
 
-
-
    register_post_type( 'services', $args);
 
  }
 
  add_action('init', 'wtd_custom_post_type');
+
+
+ /**
+ * Register a private 'Services' taxonomy for post type 'Category'.
+ *
+ * @see register_post_type() for registering post types.
+ */
+
+function wtd_custom_post_type_services_cat() {
+	$args = array(
+	   'label'        => __( 'Category', 'wtdtextdomain' ),
+	   'rewrite'      => array('slug' => 'services_category'),
+	   'hierarchical' => true,
+	   'public'       => true
+   );
+   
+   register_taxonomy('services_category', 'services', $args );
+}
+add_action( 'init', 'wtd_custom_post_type_services_cat');
+
+
+
+// Custom widget create
+
+class My_Widget extends WP_Widget{
+
+	public function __construct(){
+		parent:: __construct(
+			'first-widget', // Base ID
+			'My Widget' // Widget Name
+		);
+
+		add_action( 'widgets_init', function() {
+
+			register_widget( 'My_Widget' );
+
+		} );
+	}
+
+
+	public function widget( $args, $instance ){
+		echo 'Hello My First Widget';
+	}
+
+	// public function form( ) {}
+	// public function update(){}
+
+
+}
+
+$my_widget = new My_Widget();

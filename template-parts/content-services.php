@@ -9,8 +9,9 @@
 
         $args = array(
             'post_type'     => 'services',
-            'post_per_page' => 3,
+            'posts_per_page' => 3,
             'order'         => 'DESC'
+
         );
 
         $query = new WP_Query($args);
@@ -26,7 +27,7 @@
                 <p><?php the_content(); ?></p>
                 <a href="<?php the_permalink( ); ?>" class="btn">read more</a>
             </div>
-            
+
 
     <?php      
 
@@ -37,11 +38,6 @@
             <p>NO Services</p>
        <?php }
     ?>
-
-
-
-
-
     </div>
 </div>
 <!-- Services End Here -->

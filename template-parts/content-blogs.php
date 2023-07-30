@@ -7,8 +7,6 @@
     <!-- Page Banner End Here -->
 
 
-  
-
     <div style="margin-top:40px" <?php post_class(array('service', 'service-page', 'fix')); ?> >
 
         <div class="blog-title-area">
