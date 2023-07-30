@@ -163,6 +163,7 @@ class My_Widget extends WP_Widget{
 		echo '<p>' .$instance['description']. '</p>';
 	}
 
+	// widget FORM INSERT
 	public function form($instance) {
 		$title = $instance['title'];
 		$description   = $instance['description'];
@@ -175,15 +176,24 @@ class My_Widget extends WP_Widget{
 
 		<p>
 			<label for="<?php echo $this->get_field_id('description'); ?>">Description</label>
-			<textarea name="<?php echo $this->get_field_name('description'); ?>" id="<?php echo $this->get_field_id('description'); ?>" value="<?php echo $description ?>" class="widefat"></textarea> 
+			<textarea type="text" name="<?php echo $this->get_field_name('description'); ?>" id="<?php echo $this->get_field_id('description'); ?>" class="widefat"><?php echo $description ?></textarea> 
 		</p>
 
 
 		<?php
 	}
 
+	// widget UPDATE DATA 
+	// public function update($new_instance, $old_instance){
+	// 	$instance = [];
 
-	// public function update(){}
+	// 	$instance['title'] = (!empty($new_instance['title'])) ? $new_instance: '';
+
+	// 	$instance['description'] = (!empty($new_instance['description'])) ? $new_instance: '';
+
+	// 	return $instance;
+
+	// }
 
 
 }
