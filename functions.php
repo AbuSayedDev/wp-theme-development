@@ -139,7 +139,15 @@ add_action( 'init', 'wtd_custom_post_type_services_cat');
 
 
 
-// Custom widget create
+
+/**
+ * Register a widget.
+ *
+ * @see register_widget() for registering widget types.
+ */
+
+
+// My widget create
 
 class My_Widget extends WP_Widget{
 
@@ -159,8 +167,17 @@ class My_Widget extends WP_Widget{
 
 	public function widget( $args, $instance ){
 
-		echo '<h4>' .$instance['title']. '</h4>';
-		echo '<p>' .$instance['description']. '</p>';
+		// step one
+		echo $args['before_widget'];
+		echo $args['before_title'];
+		echo $instance['title'];
+		echo $args['after_title'];
+		echo $instance['description'];
+		echo $args['after_widget'];
+
+		// step two
+		// echo '<h4>' .$instance['title']. '</h4>';
+		// echo '<p>' .$instance['description']. '</p>';
 	}
 
 	// widget FORM INSERT
@@ -183,19 +200,86 @@ class My_Widget extends WP_Widget{
 		<?php
 	}
 
-	// widget UPDATE DATA 
-	// public function update($new_instance, $old_instance){
-	// 	$instance = [];
-
-	// 	$instance['title'] = (!empty($new_instance['title'])) ? $new_instance: '';
-
-	// 	$instance['description'] = (!empty($new_instance['description'])) ? $new_instance: '';
-
-	// 	return $instance;
-
-	// }
-
-
 }
 
 $my_widget = new My_Widget();
+
+
+// My Service widget create
+
+class my_service_widget extends WP_Widget{
+
+	public function __construct(){
+		parent:: __construct(
+			'service-widget', // Base ID
+			'Service Widget', // Widget Name
+			'Latest Service Post Widget' // Widget Description
+		);
+
+		add_action( 'widgets_init', function() {
+
+			register_widget( 'my_service_widget' );
+
+		} );
+	}
+
+
+	public function widget( $args, $instance ){
+
+		// step one
+		echo $args['before_widget'];
+		echo $args['before_title'];
+		echo $instance['title'];
+		echo $args['after_title'];
+
+
+		$arg = array(
+			'post_type' => 'services',
+			'posts_per_page' => $instance['count'],
+			'order_by' => 'DASC'
+		);
+
+		$query = new WP_Query($arg);
+
+		if($query->have_posts()){
+
+			while($query->have_posts()){
+				$query->the_post();
+
+				?>
+					<div class="sitebar-post" style="margin-top:20px">
+						<a href="<?php the_permalink( ); ?>"><img src="<?php the_post_thumbnail_url( ); ?>" alt=""></a>
+						<h3 style="margin: 10px 0;"><a href="<?php the_permalink( ); ?>"><?php the_title(); ?></a></h3>
+						<!-- <p><?php the_content(); ?></p> -->
+					</div>
+				<?php
+			}
+			
+			wp_reset_postdata(  );
+		}
+
+		echo $args['after_widget'];
+	}
+
+	// widget FORM INSERT
+	public function form($instance) {
+		$title = $instance['title'];
+		$count = $instance['count'];
+		?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>">Title</label>
+			<input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title ?>" class="widefat"> 
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('count'); ?>">Total Service Count</label>
+			<input type="text" id="<?php echo $this->get_field_id('count'); ?>" name="<?php echo $this->get_field_name('count'); ?>" value="<?php echo $count ?>" class="widefat"> 
+		</p>
+
+		<?php
+	}
+
+}
+
+$my_service_widget = new my_service_widget();
