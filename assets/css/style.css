@@ -342,3 +342,48 @@ h6 {
 .about-left-blog{
   margin-top: 50px;
 }
+
+.home-banner{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-image:url('../img/bannar.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content-area{
+  text-align: center;
+}
+
+.home-banner .content-area h2{
+  font-size: 32px;
+  line-height: 1.7em;
+}
+
+.home-banner .content-area p {
+  font-size: 18px;
+  line-height: 1.7em;
+  font-weight: bold;
+}
+
+.home-banner .content-area a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  line-height: 1.7em;
+  padding: 5px 15px;
+  background: #008080;
+  margin: 15px 0;
+  display: inline-block;
+  text-align: center;
+}
+
+.home-banner .content-area a:hover{
+  background: #0D97FF;
+}

@@ -8,8 +8,12 @@
 ?>
 
 <!-- Banner Start Here -->
-<div class="banner">
-    <img src="<?php echo get_template_directory_uri( ); ?>/assets/img/bannar.jpg" alt="Banner" />
+<div class="banner home-banner">
+    <div class="content-area">
+        <h2><?php echo get_theme_mod('banner_heading'); ?></h2>
+        <p><?php echo get_theme_mod('banner_desc'); ?></p>
+        <a href="#">Read More</a>
+    </div>
 </div>
 <!-- Banner End Here -->
 

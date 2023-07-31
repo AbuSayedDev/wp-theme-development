@@ -1,5 +1,8 @@
 <?php
 
+// inc folder wtd customize file include
+require_once(get_theme_file_path('/inc/wtd-customize.php'));
+
 /**
  * wtd_setup
  *Sets up theme defaults and registers support for various WordPress features.
