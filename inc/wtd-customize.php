@@ -40,8 +40,6 @@ function wtdtheme_customize_register( $wp_customize ) {
     );
 
 
-
-
     // banner description setting
     $wp_customize->add_setting('banner_desc', array(
         'default' => __('Description', 'wtdtextdomain'),
@@ -56,6 +54,22 @@ function wtdtheme_customize_register( $wp_customize ) {
         'section' => 'home_banner_section'
     ));
 
+    // banner description color setting
+    $wp_customize->add_setting('banner_desc_color', array(
+        'default' => '#fff',
+        'transport' => 'postMessage', // or postMessage
+    ));
+
+    // banner description color control
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'description_color', array(
+            'label'      => __( 'Description Color', 'wtdtextdomain' ),
+            'settings' => 'banner_desc_color',
+            'section' => 'home_banner_section'
+        ) )
+    );
+
+
     // banner btn setting
     $wp_customize->add_setting('banner_btn', array(
         'default' => __('Button', 'wtdtextdomain'),
@@ -69,6 +83,21 @@ function wtdtheme_customize_register( $wp_customize ) {
         'settings' => 'banner_btn',
         'section' => 'home_banner_section'
     ));
+
+    // banner btn background color setting
+    $wp_customize->add_setting('banner_btn_background_color', array(
+        'default' => '#008080',
+        'transport' => 'postMessage', // or postMessage
+    ));
+
+    // banner btn background color control
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'button_bg_color', array(
+            'label'      => __( 'Button Background Color', 'wtdtextdomain' ),
+            'settings' => 'banner_btn_background_color',
+            'section' => 'home_banner_section'
+        ) )
+    );
 
     // banner btn link setting
     $wp_customize->add_setting('banner_btn_link', array(

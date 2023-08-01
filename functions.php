@@ -288,8 +288,6 @@ class my_service_widget extends WP_Widget{
 $my_service_widget = new my_service_widget();
 
 
-
-
 /**
  * This outputs the javascript needed to automate the live settings preview.
  * Also keep in mind that this function isn't necessary unless your settings 
@@ -305,16 +303,24 @@ function wtdtheme_customizer_live_preview(){
 add_action( 'customize_preview_init', 'wtdtheme_customizer_live_preview' );
 
 
-//color css
+//Theme customizer color css
 function wtdtheme_customizer_color_css(){
 	?>
-		<style>
+		<style  type="text/css">
 			.content-area h2{
 				color: <?php echo get_theme_mod('banner_heading_color'); ?>
+			}
+
+			.content-area p{
+				color: <?php echo get_theme_mod('banner_desc_color'); ?>
+			}
+
+			.content-area a{
+				background-color: <?php echo get_theme_mod('banner_btn_background_color'); ?>
 			}
 
 		</style>
 
 	<?php
 }
-add_action( 'wp_head', 'wtdtheme_customizer_color_css' );
+add_action( 'wp_head', 'wtdtheme_customizer_color_css');

@@ -22,12 +22,26 @@
         });
     });
 
-    // banner description
+    // banner description color
+    wp.customize('banner_desc_color', function(value) {
+        value.bind(function (newval){
+            $('.content-area p').css('color', newval);
+        });
+    });
+
+    // banner Button
     wp.customize('banner_btn', function(value) {
         value.bind(function (newval){
             $('.content-area a').html(newval);
         });
     });
 
+    // banner Button background color
+    wp.customize('banner_btn_background_color', function(value) {
+        value.bind(function (newval){
+            $('.content-area a').css('background-color', newval);
+        });
+    });
 
-}) (jQuery)
+
+}) (jQuery);

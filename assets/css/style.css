@@ -378,7 +378,7 @@ h6 {
   text-transform: capitalize;
   line-height: 1.7em;
   padding: 5px 15px;
-  background: #008080;
+  /* background: #008080; */
   margin: 15px 0;
   display: inline-block;
   text-align: center;
