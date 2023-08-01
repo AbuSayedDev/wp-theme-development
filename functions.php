@@ -286,3 +286,20 @@ class my_service_widget extends WP_Widget{
 }
 
 $my_service_widget = new my_service_widget();
+
+
+
+
+/**
+ * This outputs the javascript needed to automate the live settings preview.
+ * Also keep in mind that this function isn't necessary unless your settings 
+ * are using 'transport'=>'postMessage' instead of the default 'transport'
+ * => 'refresh'
+ * 
+ * Used by hook: 'customize_preview_init'
+ */
+
+function wtdtheme_customizer_live_preview(){
+	wp_enqueue_script( 'liveJs', get_template_directory_uri().'/assets/js/customize-refresh.js', array( 'jquery','customize-preview' ), '', true);
+}
+add_action( 'customize_preview_init', 'wtdtheme_customizer_live_preview' );

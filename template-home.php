@@ -12,7 +12,7 @@
     <div class="content-area">
         <h2><?php echo get_theme_mod('banner_heading'); ?></h2>
         <p><?php echo get_theme_mod('banner_desc'); ?></p>
-        <a href="#">Read More</a>
+        <a href="<?php echo get_theme_mod('banner_btn_link'); ?>"><?php echo get_theme_mod('banner_btn'); ?></a>
     </div>
 </div>
 <!-- Banner End Here -->
