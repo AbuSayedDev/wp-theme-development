@@ -303,3 +303,18 @@ function wtdtheme_customizer_live_preview(){
 	wp_enqueue_script( 'liveJs', get_template_directory_uri().'/assets/js/customize-refresh.js', array( 'jquery','customize-preview' ), '', true);
 }
 add_action( 'customize_preview_init', 'wtdtheme_customizer_live_preview' );
+
+
+//color css
+function wtdtheme_customizer_color_css(){
+	?>
+		<style>
+			.content-area h2{
+				color: <?php echo get_theme_mod('banner_heading_color'); ?>
+			}
+
+		</style>
+
+	<?php
+}
+add_action( 'wp_head', 'wtdtheme_customizer_color_css' );

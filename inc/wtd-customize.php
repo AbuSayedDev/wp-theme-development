@@ -23,6 +23,25 @@ function wtdtheme_customize_register( $wp_customize ) {
         'section' => 'home_banner_section'
     ));
 
+
+    // banner heading color setting
+    $wp_customize->add_setting('banner_heading_color', array(
+        'default' => '#fff',
+        'transport' => 'postMessage', // or postMessage
+    ));
+
+    // banner heading color control
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'header_color', array(
+            'label'      => __( 'Header Text Color', 'wtdtextdomain' ),
+            'settings' => 'banner_heading_color',
+            'section' => 'home_banner_section'
+        ) ) 
+    );
+
+
+
+
     // banner description setting
     $wp_customize->add_setting('banner_desc', array(
         'default' => __('Description', 'wtdtextdomain'),
