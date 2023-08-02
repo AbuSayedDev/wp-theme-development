@@ -23,6 +23,17 @@ function wtdtheme_customize_register( $wp_customize ) {
         'section' => 'home_banner_section'
     ));
 
+    //Banner Heading Selective Refresh
+    $wp_customize->selective_refresh->add_partial( 'banner_heading_selective_refresh', 
+        array(
+            'selector' => '.content-area h2',
+            'settings' => 'banner_heading',
+            'section' => 'home_banner_section',
+            'render_callback' => function(){
+                return get_theme_mod('banner_heading');
+            }
+        ) 
+    );
 
     // banner heading color setting
     $wp_customize->add_setting('banner_heading_color', array(
@@ -69,6 +80,18 @@ function wtdtheme_customize_register( $wp_customize ) {
         ) )
     );
 
+    //Banner Description Selective Refresh
+    $wp_customize->selective_refresh->add_partial( 'banner_desc_selective_refresh', 
+        array(
+            'selector' => '.content-area p',
+            'settings' => 'banner_desc',
+            'section' => 'home_banner_section',
+            'render_callback' => function(){
+                return get_theme_mod('banner_desc');
+            }
+        ) 
+    );
+
 
     // banner btn setting
     $wp_customize->add_setting('banner_btn', array(
@@ -98,6 +121,22 @@ function wtdtheme_customize_register( $wp_customize ) {
             'section' => 'home_banner_section'
         ) )
     );
+
+    //Banner btn Selective Refresh
+    $wp_customize->selective_refresh->add_partial( 'banner_btn_selective_refresh', 
+        array(
+            'selector' => '.content-area a',
+            'settings' => 'banner_btn',
+            'section' => 'home_banner_section',
+            'render_callback' => function(){
+                return get_theme_mod('banner_btn');
+            }
+        ) 
+    );
+
+
+
+
 
     // banner btn link setting
     $wp_customize->add_setting('banner_btn_link', array(

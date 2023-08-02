@@ -2,11 +2,11 @@
 (function ($){
 
     // banner heading
-    wp.customize('banner_heading', function(value) {
-        value.bind(function (newval){
-            $('.content-area h2').html(newval);
-        });
-    });
+    // wp.customize('banner_heading', function(value) {
+    //     value.bind(function (newval){
+    //         $('.content-area h2').html(newval);
+    //     });
+    // });
 
     // banner heading color
     wp.customize('banner_heading_color', function(value) {
@@ -16,11 +16,11 @@
     });
 
     // banner description
-    wp.customize('banner_desc', function(value) {
-        value.bind(function (newval){
-            $('.content-area p').html(newval);
-        });
-    });
+    // wp.customize('banner_desc', function(value) {
+    //     value.bind(function (newval){
+    //         $('.content-area p').html(newval);
+    //     });
+    // });
 
     // banner description color
     wp.customize('banner_desc_color', function(value) {
