@@ -141,6 +141,30 @@ function wtd_custom_post_type_services_cat() {
 add_action( 'init', 'wtd_custom_post_type_services_cat');
 
 
+/**
+ * Register a Service meta box.
+ */
+
+ function wtd_custom_services_meta_box(){
+	add_meta_box(
+		'service_meta_box',
+		__('Service Meta Box', 'wtdtextdomain'),
+		'service_function',
+		'services',
+		'normal',
+		'default',
+	);
+ }
+
+ add_action( 'add_meta_boxes', 'wtd_custom_services_meta_box' );
+
+
+ function service_function(){
+
+ }
+
+
+
 
 
 /**

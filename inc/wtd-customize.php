@@ -8,14 +8,15 @@ function wtdtheme_customize_register( $wp_customize ) {
         'title'=> __('Banner Title', 'wtdtextdomain'),
         'priority' => 20,
     ));
+    //Home Banner Section END
 
-    // banner heading setting
+    // Banner heading setting
     $wp_customize->add_setting('banner_heading', array(
         'default' => __('WordPress Theme Development', 'wtdtextdomain'),
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner heading control
+    // Banner heading control
     $wp_customize->add_control('banner_heading_ctr', array(
         'label' => __('Heading', 'wtdtextdomain'),
         'type' => 'text',
@@ -35,13 +36,13 @@ function wtdtheme_customize_register( $wp_customize ) {
         ) 
     );
 
-    // banner heading color setting
+    // Banner Heading color setting
     $wp_customize->add_setting('banner_heading_color', array(
         'default' => '#fff',
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner heading color control
+    // Banner Heading color control
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
         'header_color', array(
             'label'      => __( 'Header Text Color', 'wtdtextdomain' ),
@@ -49,15 +50,16 @@ function wtdtheme_customize_register( $wp_customize ) {
             'section' => 'home_banner_section'
         ) ) 
     );
+    //Banner Deading END
 
 
-    // banner description setting
+    // Banner Description setting
     $wp_customize->add_setting('banner_desc', array(
         'default' => __('Description', 'wtdtextdomain'),
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner description control
+    // Banner Description control
     $wp_customize->add_control('banner_desc_ctr', array(
         'label' => __('Description', 'wtdtextdomain'),
         'type' => 'textarea',
@@ -65,13 +67,13 @@ function wtdtheme_customize_register( $wp_customize ) {
         'section' => 'home_banner_section'
     ));
 
-    // banner description color setting
+    // Banner Description color setting
     $wp_customize->add_setting('banner_desc_color', array(
         'default' => '#fff',
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner description color control
+    // Banner Description color control
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
         'description_color', array(
             'label'      => __( 'Description Color', 'wtdtextdomain' ),
@@ -91,15 +93,16 @@ function wtdtheme_customize_register( $wp_customize ) {
             }
         ) 
     );
+    //Banner Description END
 
 
-    // banner btn setting
+    // Banner Button setting
     $wp_customize->add_setting('banner_btn', array(
         'default' => __('Button', 'wtdtextdomain'),
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner btn control
+    // Banner Button control
     $wp_customize->add_control('banner_btn_ctr', array(
         'label' => __('Button', 'wtdtextdomain'),
         'type' => 'text',
@@ -107,13 +110,13 @@ function wtdtheme_customize_register( $wp_customize ) {
         'section' => 'home_banner_section'
     ));
 
-    // banner btn background color setting
+    // Banner Button background color setting
     $wp_customize->add_setting('banner_btn_background_color', array(
         'default' => '#008080',
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner btn background color control
+    // Banner Button background color control
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
         'button_bg_color', array(
             'label'      => __( 'Button Background Color', 'wtdtextdomain' ),
@@ -122,7 +125,7 @@ function wtdtheme_customize_register( $wp_customize ) {
         ) )
     );
 
-    //Banner btn Selective Refresh
+    //Banner Button Selective Refresh
     $wp_customize->selective_refresh->add_partial( 'banner_btn_selective_refresh', 
         array(
             'selector' => '.content-area a',
@@ -133,44 +136,40 @@ function wtdtheme_customize_register( $wp_customize ) {
             }
         ) 
     );
+    //Banner Button END
 
 
-
-
-
-    // banner btn link setting
+    // Banner Button Link setting
     $wp_customize->add_setting('banner_btn_link', array(
         'default' => __('https://abusayeddev.com/', 'wtdtextdomain'),
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner btn link control
+    // Banner Button Link control
     $wp_customize->add_control('banner_btn_link_ctr', array(
         'label' => __('Button Link', 'wtdtextdomain'),
         'type' => 'url',
         'settings' => 'banner_btn_link',
         'section' => 'home_banner_section'
     ));
+    //Banner Button Link END
 
-    // banner image setting
+
+
+    // Banner Image setting
     $wp_customize->add_setting('banner_image', array(
         'transport' => 'postMessage', // or postMessage
     ));
 
-    // banner image control
+    // Banner Image control
     $wp_customize ->add_control(new WP_Customize_Image_Control($wp_customize, 
         'banner_image', array(
             'label' => __('Upload a Banner Image', 'wtdtextdomain'),
             'settings' => 'banner_image',
             'section' => 'home_banner_section'
-
-
         ))
     );
-
-
-
-
+    //Banner Image END
 
 }
 
