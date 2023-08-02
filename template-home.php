@@ -8,7 +8,7 @@
 ?>
 
 <!-- Banner Start Here -->
-<div class="banner home-banner">
+<div class="banner home-banner" style="background-image:url('<?php echo get_theme_mod('banner_image'); ?>');">
     <div class="content-area">
         <h2><?php echo get_theme_mod('banner_heading'); ?></h2>
         <p><?php echo get_theme_mod('banner_desc'); ?></p>

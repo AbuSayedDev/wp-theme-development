@@ -113,6 +113,26 @@ function wtdtheme_customize_register( $wp_customize ) {
         'section' => 'home_banner_section'
     ));
 
+    // banner image setting
+    $wp_customize->add_setting('banner_image', array(
+        'transport' => 'postMessage', // or postMessage
+    ));
+
+    // banner image control
+    $wp_customize ->add_control(new WP_Customize_Image_Control($wp_customize, 
+        'banner_image', array(
+            'label' => __('Upload a Banner Image', 'wtdtextdomain'),
+            'settings' => 'banner_image',
+            'section' => 'home_banner_section'
+
+
+        ))
+    );
+
+
+
+
+
 }
 
 add_action( 'customize_register', 'wtdtheme_customize_register' );
