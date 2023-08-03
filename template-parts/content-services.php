@@ -25,6 +25,10 @@
                 <h4><?php the_title(); ?></h4>
                 <img src="<?php the_post_thumbnail_url( ); ?>" alt="Service" />
                 <p><?php the_content(); ?></p>
+                <ul>
+                    <li><strong>Sale Price:</strong> <?php echo get_post_meta(get_the_ID(), 'sale_price', true ); ?></li>
+                    <li><strong>Regular Price:</strong> <del><?php echo get_post_meta(get_the_ID(), 'regular_price', true ); ?></del></li>
+                </ul>
                 <a href="<?php the_permalink( ); ?>" class="btn">read more</a>
             </div>
 

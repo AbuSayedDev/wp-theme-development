@@ -161,11 +161,26 @@ add_action( 'init', 'wtd_custom_post_type_services_cat');
 
  function service_function(){
 
+	?>
+		<div style="display: flex; justify-content: center; align-items: center;">
+			<div style="width: 100%; padding: 10px;">
+				<label for="<?php echo get_post_meta(get_the_ID(), 'regular_price', true) ?>">Regula Price </label>
+				<input type="text" name="regular_price" value="<?php echo get_post_meta(get_the_ID(), 'regular_price', true) ?>" class="widefat">
+			</div>
+			<div style="width: 100%; padding: 10px;">
+				<label for="<?php echo get_post_meta(get_the_ID(), 'sale_price', true) ?>">Sale Price</label>
+				<input type="text" name="sale_price" value="<?php echo get_post_meta(get_the_ID(), 'sale_price', true) ?>" class="widefat">
+			</div>
+		</div>
+	<?php
  }
 
+ function service_metabox_update(){
+	update_post_meta(get_the_ID(), 'regular_price', $_POST['regular_price']);
+	update_post_meta(get_the_ID(), 'sale_price', $_POST['sale_price']);
+ }
 
-
-
+ add_action('save_post', 'service_metabox_update');
 
 /**
  * Register a widget.
