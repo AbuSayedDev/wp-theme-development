@@ -160,27 +160,59 @@ add_action( 'init', 'wtd_custom_post_type_services_cat');
 
 
  function service_function(){
+	global $post;
+
+	$regular_price = get_post_meta($post->ID, 'regular_price', true);
+	$sale_price = get_post_meta($post->ID, 'sale_price', true);
+	$select_years = get_post_meta($post->ID, 'select_years', true);
+	
 
 	?>
 		<div style="display: flex; justify-content: center; align-items: center;">
 			<div style="width: 100%; padding: 10px;">
-				<label for="<?php echo get_post_meta(get_the_ID(), 'regular_price', true) ?>">Regula Price </label>
-				<input type="text" name="regular_price" value="<?php echo get_post_meta(get_the_ID(), 'regular_price', true) ?>" class="widefat">
+				<label>Regula Price </label>
+				<input type="number" name="regular_price" value="<?php echo $regular_price ?>" class="widefat">
 			</div>
 			<div style="width: 100%; padding: 10px;">
-				<label for="<?php echo get_post_meta(get_the_ID(), 'sale_price', true) ?>">Sale Price</label>
-				<input type="text" name="sale_price" value="<?php echo get_post_meta(get_the_ID(), 'sale_price', true) ?>" class="widefat">
+				<label>Sale Price</label>
+				<input type="number" name="sale_price" value="<?php echo $sale_price ?>" class="widefat">
+			</div>
+			<div style="width: 100%; padding: 10px;">
+				<label for="<?php echo $select_years ?>">Choose a Year:</label>
+				<select name="select_years" id="<?php echo $select_years ?>">
+					<option>Select</option>
+					<option value="2021" <?php if($select_years == '2021'){echo 'selected';} ?>>2021</option>
+					<option value="2122" <?php if($select_years == '2122'){echo 'selected';} ?>>2122</option>
+					<option value="2023" <?php if($select_years == '2023'){echo 'selected';} ?>>2023</option>
+					<option value="2024" <?php if($select_years == '2024'){echo 'selected';} ?>>2024</option>
+				</select>
 			</div>
 		</div>
 	<?php
  }
 
+ //service metabox update function
  function service_metabox_update(){
-	update_post_meta(get_the_ID(), 'regular_price', $_POST['regular_price']);
-	update_post_meta(get_the_ID(), 'sale_price', $_POST['sale_price']);
+	global $post;
+
+	if(isset($_POST['regular_price'])){
+		update_post_meta($post->ID, 'regular_price', $_POST['regular_price']);
+	}
+
+	if(isset($_POST['sale_price'])){
+		update_post_meta($post->ID, 'sale_price', $_POST['sale_price']);
+	}
+
+	if(isset($_POST['select_years'])){
+		update_post_meta($post->ID, 'select_years', $_POST['select_years']);
+	}
  }
 
  add_action('save_post', 'service_metabox_update');
+
+
+
+
 
 /**
  * Register a widget.

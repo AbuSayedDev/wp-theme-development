@@ -34,8 +34,6 @@ get_header(); ?>
                 $query->the_post();
      ?>
 
-
-
         <div class="single-service">
             <h4><?php the_title(); ?></h4>
             <img src="<?php the_post_thumbnail_url( );?>" alt="Service 1" />
@@ -46,9 +44,6 @@ get_header(); ?>
             </ul>
             <a href="<?php the_permalink(); ?>" class="btn">read more</a>
         </div>
-
-
-
 
     <?php  wp_reset_postdata(); } 
         }else{ ?>
