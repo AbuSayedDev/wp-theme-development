@@ -3,6 +3,12 @@
 // inc folder wtd customize file include
 require_once(get_theme_file_path('/inc/wtd-customize.php'));
 
+
+// Login Enqueue Register
+include_once('inc/login-enqueue.php');
+
+
+
 /**
  * wtd_setup
  *Sets up theme defaults and registers support for various WordPress features.
@@ -395,3 +401,28 @@ function wtdtheme_customizer_color_css(){
 	<?php
 }
 add_action( 'wp_head', 'wtdtheme_customizer_color_css');
+
+
+
+//Theme Custom Login page style
+
+function custom_color_login(){
+	?>
+		<style>
+			.login #login h1 a{
+				background-image: url(<?php echo get_theme_mod('custom_login_logo'); ?>) !important;
+			}
+			body.login{
+				background: url(<?php echo get_theme_mod('custom_login_bg'); ?>) !important;
+			}
+			body.login #login #loginform p.submit input{
+				background-color: <?php echo get_theme_mod('custom_login_button_color'); ?> !important;
+			}
+			body.login #login #loginform p.submit input:hover{
+				background-color: <?php echo get_theme_mod('custom_login_button_hov_color'); ?> !important;
+			}
+		</style>
+	<?php  
+}
+
+add_action('login_enqueue_scripts', 'custom_color_login' );

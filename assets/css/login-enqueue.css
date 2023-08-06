@@ -1,0 +1,69 @@
+
+body.login{
+    background: url(../img/page-bannar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+body.login #login{
+    background: rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+
+body.login #login #loginform{
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: 0;
+}
+
+body.login #login #loginform p.forgetmenot{
+    display: block;
+}
+
+body.login #login #loginform p.submit input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #000000;
+    border: 0;
+    padding: 5px;
+    font-size: 16px;
+    transition: 0.5s;
+}
+body.login #login #loginform p.submit input:hover{
+    background-color: #C12428;
+    transition: 0.5s;
+}
+
+
+body.login #login #nav,
+body.login #login #backtoblog{
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+    float: left;
+}
+
+body.login #login #loginform label,
+body.login #login #nav a,
+body.login #login #backtoblog a{
+    color: #fff;
+}
+
+body.login #login #nav a:hover{
+    color: #C12428;
+}
+
+body.login #login #backtoblog{
+    float: right;
+}
+
+body.login #login #backtoblog a:hover{
+    color: #C12428;
+}

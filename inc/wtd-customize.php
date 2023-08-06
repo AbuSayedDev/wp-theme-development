@@ -171,6 +171,71 @@ function wtdtheme_customize_register( $wp_customize ) {
     );
     //Banner Image END
 
+
+
+    //Theme Custom Login Page
+    $wp_customize->add_section('custom_login',  array(
+        'title'=> __('Custom Login', 'wtdtextdomain'),
+        'priority' => 30,
+    ));
+
+    //Login logo
+    $wp_customize->add_setting('custom_login_logo', array(
+        'default' => get_template_directory_uri(). '/assets/img/Favicon.png',
+        'transport' => 'postMessage', // or postMessage
+    ));
+
+    $wp_customize ->add_control(new WP_Customize_Image_Control($wp_customize, 
+        'custom_login_image', array(
+            'label' => __('Logo Upload', 'wtdtextdomain'),
+            'settings' => 'custom_login_logo',
+            'section' => 'custom_login'
+        ))
+    );
+
+    //Login Background Image
+    $wp_customize->add_setting('custom_login_bg', array(
+        'default' => get_template_directory_uri(). '/assets/img/page-bannar.jpg',
+        'transport' => 'postMessage', // or postMessage
+    ));
+
+    $wp_customize ->add_control(new WP_Customize_Image_Control($wp_customize, 
+        'custom_login_bg_image', array(
+            'label' => __('Upload Background', 'wtdtextdomain'),
+            'settings' => 'custom_login_bg',
+            'section' => 'custom_login'
+        ))
+    );
+
+    //Login Button color
+    $wp_customize->add_setting('custom_login_button_color', array(
+        'default' => '#000000',
+        'transport' => 'postMessage', // or postMessage
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'logo_btn_bg_color', array(
+            'label'      => __( 'Button Background Color', 'wtdtextdomain' ),
+            'settings' => 'custom_login_button_color',
+            'section' => 'custom_login'
+        ) )
+    );
+
+    //Login Button Hover color
+    $wp_customize->add_setting('custom_login_button_hov_color', array(
+        'default' => '#C12428',
+        'transport' => 'postMessage', // or postMessage
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 
+        'logo_btn_bg_hov_color', array(
+            'label'      => __( 'Button Background Hover Color', 'wtdtextdomain' ),
+            'settings' => 'custom_login_button_hov_color',
+            'section' => 'custom_login'
+        ) )
+    );
+
+
 }
 
 add_action( 'customize_register', 'wtdtheme_customize_register' );
