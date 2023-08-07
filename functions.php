@@ -7,6 +7,9 @@ require_once(get_theme_file_path('/inc/wtd-customize.php'));
 // Login Enqueue Register
 include_once('inc/login-enqueue.php');
 
+// Redux Register
+include_once('inc/redux.php');
+
 
 
 /**

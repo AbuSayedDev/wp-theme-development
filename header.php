@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+    <?php 
+        // Using the global argment
+        global $redux_demo; // Same as your opt_name
+    ?>
+
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
