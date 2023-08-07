@@ -79,6 +79,14 @@
             ?>
             </div>
         </div>
+
+
+
+        <div class="redux-content">
+            <h1>Redux Content show</h1>
+            <h3><?php echo $redux_demo['opt-text']; ?></h3>
+            <p><?php echo $redux_demo['opt-textarea']; ?></p>
+        </div>
     </div>
 
     <!-- sidebar -->
