@@ -16,7 +16,6 @@
         'page_priority'        => 2,
 	    'show_import_export'        => true,
         'footer_credit'             => '@ <a href="https://abusayeddev.com" target="_blink">Abu Sayed</a> 2023',
-        
     );
 
     
@@ -48,6 +47,17 @@
                 'subtitle' => esc_html__( 'Example subtitle.', 'wtdtextdomain' ),
                 'hint'     => array(
                     'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
+                )
+                ),
+            array(
+                'id'       => 'opt-media',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => esc_html__( 'Upload Image', 'wtdtextdomain' ),
+                'desc'     => esc_html__( 'Basic media uploader with disabled URL input field.', 'wtdtextdomain' ),
+                'subtitle' => esc_html__( 'Upload any media using the WordPress native uploader.', 'wtdtextdomain' ),
+                'default' => array(
+                    'url' => get_template_directory().'/assets/img/page-bannar.jpg',
                 )
             )
         )

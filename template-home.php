@@ -84,6 +84,7 @@
 
         <div class="redux-content">
             <h1>Redux Content show</h1>
+            <img src="<?php echo $redux_demo['opt-media']['url']?>" style="margin:30px 0">
             <h3><?php echo $redux_demo['opt-text']; ?></h3>
             <p><?php echo $redux_demo['opt-textarea']; ?></p>
         </div>
@@ -93,5 +94,7 @@
     <?php get_sidebar(); ?>
 </div>
 <!-- About End Here -->
+
+
 
 <?php get_footer(); ?>
