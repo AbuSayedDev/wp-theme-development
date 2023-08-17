@@ -59,6 +59,13 @@
                 'default' => array(
                     'url' => get_template_directory().'/assets/img/page-bannar.jpg',
                 )
-            )
+            ),
+            array(
+                'id'       => 'opt-gallery',
+                'type'     => 'gallery',
+                'title'    => esc_html__( 'Add/Edit Gallery', 'wtdtextdomain' ),
+                'desc'     => esc_html__( 'This is the description field, again good for additional info.', 'wtdtextdomain' ),
+                'subtitle' => esc_html__( 'Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader.', 'wtdtextdomain' ),  
+            ),
         )
     ) );

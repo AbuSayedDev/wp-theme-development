@@ -81,12 +81,28 @@
         </div>
 
 
-
+        <!-- redux -->
         <div class="redux-content">
             <h1>Redux Content show</h1>
             <img src="<?php echo $redux_demo['opt-media']['url']?>" style="margin:30px 0">
             <h3><?php echo $redux_demo['opt-text']; ?></h3>
             <p><?php echo $redux_demo['opt-textarea']; ?></p>
+
+            <?php
+
+                $gallery = $redux_demo['opt-gallery'];
+                $gallerys = explode(',',  $gallery);
+
+                foreach ($gallerys as $image){
+                    $single_image = wp_get_attachment_image_src($image);
+
+                    ?>
+                        <img src="<?php echo $single_image[0] ?>" style="margin:30px 0">
+                    <?php
+                }
+            
+            
+            ?>
         </div>
     </div>
 
