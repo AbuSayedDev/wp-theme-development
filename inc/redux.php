@@ -66,6 +66,50 @@
                 'title'    => esc_html__( 'Add/Edit Gallery', 'wtdtextdomain' ),
                 'desc'     => esc_html__( 'This is the description field, again good for additional info.', 'wtdtextdomain' ),
                 'subtitle' => esc_html__( 'Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader.', 'wtdtextdomain' ),  
-            ),
-        )
-    ) );
+            )
+   ) ) );
+
+
+   Redux::set_section( $opt_name, array(
+    'title'  => esc_html__( 'Typography', 'wtdtextdomain' ),
+    'id'     => 'typography',
+    'desc'   => esc_html__( 'Typography option with each property can be called individually..', 'wtdtextdomain' ),
+    'icon'   => 'el el-home',
+    'fields' => array(
+        array( 
+            'id'          => 'opt-typography',
+            'type'        => 'typography', 
+            'title'       => esc_html__('H1', 'wtdtextdomain'),
+            'google'      => true, 
+            'font-backup' => true,
+            'output'      => array('h1'),
+            'units'       =>'px',
+            'subtitle'    => esc_html__('Global H1 Heading Typography option with each property can be called individually.', 'wtdtextdomain'),
+            'default'     => array(
+                'color'       => '#333', 
+                'font-style'  => '700', 
+                'font-family' => 'Abel', 
+                'google'      => true,
+                'font-size'   => '36px', 
+                'line-height' => '40'
+            )),
+            array( 
+                'id'          => 'opt-typography1',
+                'type'        => 'typography', 
+                'title'       => esc_html__('p', 'wtdtextdomain'),
+                'google'      => true, 
+                'font-backup' => true,
+                'output'      => array('p'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Global p Heading Typography option with each property can be called individually.', 'wtdtextdomain'),
+                'default'     => array(
+                    'color'       => '#333', 
+                    'font-style'  => '400', 
+                    'font-family' => 'Abel', 
+                    'google'      => true,
+                    'font-size'   => '16px', 
+                    'line-height' => '32'
+            ))
+) ) );
+
+

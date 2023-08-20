@@ -387,3 +387,8 @@ h6 {
 .home-banner .content-area a:hover{
   background: #0D97FF;
 }
+
+.redux_gallery{
+  display: flex;
+  justify-content: start;
+}

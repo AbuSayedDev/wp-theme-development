@@ -88,6 +88,9 @@
             <h3><?php echo $redux_demo['opt-text']; ?></h3>
             <p><?php echo $redux_demo['opt-textarea']; ?></p>
 
+
+
+            <div class="redux_gallery">
             <?php
 
                 $gallery = $redux_demo['opt-gallery'];
@@ -97,12 +100,14 @@
                     $single_image = wp_get_attachment_image_src($image);
 
                     ?>
-                        <img src="<?php echo $single_image[0] ?>" style="margin:30px 0">
+                            <img src="<?php echo $single_image[0] ?>" style="margin:30px 0">
+                        
                     <?php
                 }
             
-            
             ?>
+
+            </div>
         </div>
     </div>
 
