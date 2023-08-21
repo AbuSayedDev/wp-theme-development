@@ -88,11 +88,96 @@
             'default'     => array(
                 'color'       => '#333', 
                 'font-style'  => '700', 
-                'font-family' => 'Abel', 
+                'font-family' => 'Montserrat', 
                 'google'      => true,
                 'font-size'   => '36px', 
                 'line-height' => '40'
             )),
+            array( 
+                'id'          => 'opt-typographyh2',
+                'type'        => 'typography', 
+                'title'       => esc_html__('H2', 'wtdtextdomain'),
+                'google'      => true, 
+                'font-backup' => true,
+                'output'      => array('h2'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Global H2 Heading Typography option with each property can be called individually.', 'wtdtextdomain'),
+                'default'     => array(
+                    'color'       => '#333', 
+                    'font-style'  => '700', 
+                    'font-family' => 'Montserrat', 
+                    'google'      => true,
+                    'font-size'   => '32px', 
+                    'line-height' => '40'
+            )),
+            array( 
+                'id'          => 'opt-typographyh3',
+                'type'        => 'typography', 
+                'title'       => esc_html__('H3', 'wtdtextdomain'),
+                'google'      => true, 
+                'font-backup' => true,
+                'output'      => array('h3'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Global H3 Heading Typography option with each property can be called individually.', 'wtdtextdomain'),
+                'default'     => array(
+                    'color'       => '#333', 
+                    'font-style'  => '700', 
+                    'font-family' => 'Montserrat', 
+                    'google'      => true,
+                    'font-size'   => '30px', 
+                    'line-height' => '40'
+            )),
+            array( 
+                'id'          => 'opt-typographyh4',
+                'type'        => 'typography', 
+                'title'       => esc_html__('H4', 'wtdtextdomain'),
+                'google'      => true, 
+                'font-backup' => true,
+                'output'      => array('h4'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Global H4 Heading Typography option with each property can be called individually.', 'wtdtextdomain'),
+                'default'     => array(
+                    'color'       => '#333', 
+                    'font-style'  => '700', 
+                    'font-family' => 'Montserrat', 
+                    'google'      => true,
+                    'font-size'   => '28px', 
+                    'line-height' => '40'
+            )),
+            array( 
+                'id'          => 'opt-typographyh5',
+                'type'        => 'typography', 
+                'title'       => esc_html__('H5', 'wtdtextdomain'),
+                'google'      => true, 
+                'font-backup' => true,
+                'output'      => array('h5'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Global H5 Heading Typography option with each property can be called individually.', 'wtdtextdomain'),
+                'default'     => array(
+                    'color'       => '#333', 
+                    'font-style'  => '700', 
+                    'font-family' => 'Montserrat', 
+                    'google'      => true,
+                    'font-size'   => '22px', 
+                    'line-height' => '40'
+            )),
+            array( 
+                'id'          => 'opt-typographyh6',
+                'type'        => 'typography', 
+                'title'       => esc_html__('H6', 'wtdtextdomain'),
+                'google'      => true, 
+                'font-backup' => true,
+                'output'      => array('h6'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Global H6 Heading Typography option with each property can be called individually.', 'wtdtextdomain'),
+                'default'     => array(
+                    'color'       => '#333', 
+                    'font-style'  => '700', 
+                    'font-family' => 'Montserrat', 
+                    'google'      => true,
+                    'font-size'   => '18px', 
+                    'line-height' => '40'
+                )),
             array( 
                 'id'          => 'opt-typography1',
                 'type'        => 'typography', 
@@ -105,7 +190,7 @@
                 'default'     => array(
                     'color'       => '#333', 
                     'font-style'  => '400', 
-                    'font-family' => 'Abel', 
+                    'font-family' => 'Montserrat', 
                     'google'      => true,
                     'font-size'   => '16px', 
                     'line-height' => '32'
